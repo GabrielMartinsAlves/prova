@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "author": "Victor Hayashi",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-s3-devkitc-1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 111.6,
+      "left": 205.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 224.75,
+      "left": 201.6,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 282.65,
+      "left": 17.8,
+      "rotate": 180,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 111.6,
+      "left": 291.8,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 111.6,
+      "left": 147.8,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 92.6,
+      "left": -134.4,
+      "attrs": { "color": "grey" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 12.8,
+      "left": -440.8,
+      "attrs": {}
+    },
+    { "type": "wokwi-led", "id": "led4", "top": 6, "left": 138.2, "attrs": { "color": "blue" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "led3:C", "r3:1", "black", [ "h0.4", "v63.51" ] ],
+    [ "esp:9", "led3:A", "yellow", [ "h0" ] ],
+    [ "r2:1", "esp:GND.4", "black", [ "v0" ] ],
+    [ "r2:2", "led2:C", "black", [ "h46.8", "v-76.8" ] ],
+    [ "led1:A", "esp:40", "red", [ "h48.1", "v-64.05" ] ],
+    [ "btn1:2.r", "esp:18", "gray", [ "h38.6", "v29" ] ],
+    [ "ldr1:GND", "esp:GND.1", "black", [ "h19.2", "v239.6", "h211.2", "v-48" ] ],
+    [ "ldr1:VCC", "esp:5V", "red", [ "h57.6", "v192" ] ],
+    [ "r3:2", "esp:GND.1", "black", [ "h-37.2", "v-105.42" ] ],
+    [ "ldr1:AO", "esp:4", "green", [ "h0" ] ],
+    [ "led2:A", "esp:41", "green", [ "v2.08", "h10.53", "v-144" ] ],
+    [ "led4:C", "esp:GND.2", "black", [ "v9.6", "h-28.4", "v-134.22" ] ],
+    [ "led4:A", "esp:48", "blue", [ "h-48", "v124.98" ] ],
+    [ "btn1:1.l", "esp:3V3.1", "green", [ "h-38.4", "v-76.62" ] ],
+    [ "led1:C", "esp:GND.3", "black", [ "v67.2", "h0.4" ] ]
+  ],
+  "dependencies": {}
+}

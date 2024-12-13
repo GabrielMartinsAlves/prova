@@ -1,0 +1,3 @@
+### Estados do sistema
+
+&emsp;Existem, basicamente, três estados possíveis do sistema, o primeiro é o padrão, no qual botão não está pressonado e está de dia segundo o sensor LDR, no que qual o semáforo funciona normalmente, controlado por meio de uma temporização, alternando entre verde (3 segundos), amarelo (2 segundos) e vermelho (5 segundos). O segundo estado é quando está de noite, nesse momento o semáforo fica sempre piscando amarelo a cada 1 segundo. Por fim o último estado ocorre quando o botão está pressionado, no qual o simulador irá abrir o semáforo depois de 1 segundo que for pressionado.
